@@ -1,0 +1,50 @@
+{
+    "type": "sample | pattern",
+    "category": "serverles | dashbuilder",
+    "status": "ok | out of date | deprecated",
+    "title": "Project name that will be shown on the website",
+    "description": "Description of the sample or pattern",
+    "cover": "relative path to the file what will be rendered as cover",
+    "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+    ],
+    "dependencies": [],
+    "related_to": [],
+    "resources": [
+        {
+            "type": "video",
+            "title": "A Title for the video",
+            "text": "",
+            "resource_url": "http://youtube.com"
+        },
+        {
+            "type": "documentation",
+            "title": "A Title for the video",
+            "text": "Some Markdown docs?",
+            "resource_url": ""
+        },
+        {
+            "type": "link",
+            "title": "Go To Dashbuilder",
+            "text": "",
+            "resource_url": "https://dashbuilder.org"
+        }
+    ],
+    "authors": [
+        {
+            "name": "Author Name",
+            "email": "Author Email",
+            "image": "link to image",
+            "github": "Author Personal Github",
+            "bio": "A little information about author bio",
+            "social": [
+                {
+                    "network": "twitter",
+                    "id": "@adrielparedes"
+                }
+            ]
+        }
+    ]
+}
