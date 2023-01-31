@@ -1,0 +1,54 @@
+{
+    "type": "sample | pattern",
+    "category": [
+        "serverles-workflow",
+        "serverless-decision",
+        "dashbuilder"
+    ],
+    "status": "ok | out of date | deprecated",
+    "title": "Template project",
+    "description": "This is a template project. Every sample or pattern should follow this template to create their own. This is the most important file and should be located in the root of your sample or pattern. Without this file we can't locate the needed information to show the sample or patter in https://start.kubesmarts.org",
+    "cover": "./workflow.sw.json",
+    "tags": [
+        "template",
+        "samples",
+        "patterns"
+    ],
+    "dependencies": [],
+    "related_to": [],
+    "resources": [
+        {
+            "type": "video",
+            "title": "A Title for the video",
+            "text": "",
+            "resource_url": "http://youtube.com"
+        },
+        {
+            "type": "documentation",
+            "title": "A Title for the video",
+            "text": "Some Markdown docs?",
+            "resource_url": ""
+        },
+        {
+            "type": "link",
+            "title": "Go To Dashbuilder",
+            "text": "",
+            "resource_url": "https://dashbuilder.org"
+        }
+    ],
+    "authors": [
+        {
+            "name": "Adriel Paredes",
+            "email": "adriel.paredes@gmail.com",
+            "image": "https://www.gravatar.com/avatar/68dfec17cd5c71ff6913c09543dc4fdb?s=500",
+            "github": "https://github.com/adrielparedes",
+            "bio": "A little information about author bios",
+            "social": [
+                {
+                    "network": "twitter",
+                    "id": "@adrielparedes"
+                }
+            ]
+        }
+    ]
+}
