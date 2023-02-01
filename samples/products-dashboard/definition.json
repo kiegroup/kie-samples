@@ -1,0 +1,27 @@
+{
+  "type": "sample",
+  "category": "dashbuilder",
+  "status": "ok",
+  "title": "Products Dashboard",
+  "description": "Products Dashboard",
+  "cover": "./products-dashboard.svg",
+  "tags": ["electronics"],
+  "dependencies": [],
+  "related_to": [],
+  "resources": [],
+  "authors": [
+    {
+      "name": "Kumar Aditya Raj",
+      "email": "kraj@redhat.com",
+      "image": "https://lh3.googleusercontent.com/ogwAAEL6sggXJ-YBUHXaHmPzJe4kK29bWhOqFb36E5tNoc7=s32-c-mo",
+      "github": "https://github.com/kumaradityaraj",
+      "bio": "A geek who has started contributing to open source; is a final year grad student and loves travelling.",
+      "social": [
+        {
+          "network": "twitter",
+          "id": "@aditya_twts_"
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@ global:
   mode: dark
   settings:
     chart:
-      resizable: true 
+      resizable: true
 datasets:
   - uuid: products
     content: >-
@@ -42,6 +42,5 @@ pages:
                   - source: Quantity2
                     function: SUM
       - settings:
-          type: TABLE
           lookup:
             uuid: products
