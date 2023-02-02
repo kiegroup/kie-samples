@@ -3,9 +3,15 @@
   "category": "dashbuilder",
   "status": "ok",
   "title": "Products Dashboard",
-  "description": "Products Dashboard",
+  "description": "This is a Dashbuilder sample where you can see quantity comparison between products in bar chart; you can also add different sections in a product and visualize the result in dark or light mode.",
   "cover": "./products-dashboard.svg",
-  "tags": ["electronics"],
+  "tags": [
+    "Bar Chart",
+    "bar chart",
+    "quantity comparison",
+    "quantity comparison dashbuilder",
+    "products dashbuilder"
+  ],
   "dependencies": [],
   "related_to": [],
   "resources": [],
