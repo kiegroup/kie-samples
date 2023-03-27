@@ -1,0 +1,243 @@
+properties:
+  metricsUrl: https://raw.githubusercontent.com/jesuino/dashbuilder-yaml-samples/main/jupyterhub/metrics/metrics
+global:
+  mode: dark
+  settings:
+    chart:
+      grid:
+        x: false
+    html:
+      html: >-
+        <div id="${this}" class="card-pf card-pf-aggregate-status" style="background-color: ${bgColor}; width: 90%; height: 80px;margin: 10px; border-radius: 10px">
+          <h2 style="font-weight: 600; font-size: large" id="${this}Value">${value} <span id="${this}Suffix" class=""></span></h2>
+          <p style="font-weight: 400" id="${this}Title"><em id="${this}Icon" class=""></em> ${title}</p>
+        </div>
+    columns:
+      - id: Label
+        expression: >-
+          value.replaceAll("status=\"", "").replaceAll("\"", "")
+datasets:
+  - uuid: metrics
+    url: ${metricsUrl}
+    columns:
+      - id: Metric
+        type: LABEL
+      - id: Label
+        type: LABEL
+      - id: Value
+        type: NUMBER
+pages:
+  - properties:
+      margin-left: 10px
+    rows:
+      - columns:
+          - components:
+              - html: Jupyter Hub Metrics Summary <hr />
+                properties:
+                  font-size: x-large
+      - columns:
+          - span: 3
+            components:
+              - settings:
+                  type: METRIC
+                  general:
+                    title: Users
+                  html:
+                    javascript: document.getElementById(${this}.id + "Icon").className = "pficon-user";
+                  columns:
+                    - id: value
+                      pattern: "#"
+                  lookup:
+                    uuid: metrics
+                    filter:
+                      - column: metric
+                        function: EQUALS_TO
+                        args:
+                          - jupyterhub_total_users
+                    group:
+                      - functions:
+                          - source: value
+          - span: 3
+            components:
+              - settings:
+                  type: METRIC
+                  general:
+                    title: Running Servers
+
+                  html:
+                    javascript: document.getElementById(${this}.id + "Icon").className = "pficon-volume";
+                  columns:
+                    - id: value
+                      pattern: "#"
+                  lookup:
+                    uuid: metrics
+                    filter:
+                      - column: metric
+                        function: EQUALS_TO
+                        args:
+                          - jupyterhub_running_servers
+                    group:
+                      - functions:
+                          - source: value
+          - span: 3
+            components:
+              - settings:
+                  type: METRIC
+                  general:
+                    title: Memory (mb)
+                  html:
+                    javascript: document.getElementById(${this}.id + "Icon").className = "fa fa-tachometer";
+                  columns:
+                    - id: value
+                      expression: value / 1014 / 1024
+                      pattern: "#"
+                  lookup:
+                    uuid: metrics
+                    filter:
+                      - column: metric
+                        function: EQUALS_TO
+                        args:
+                          - process_resident_memory_bytes
+                    group:
+                      - functions:
+                          - source: value
+          - span: 3
+            components:
+              - settings:
+                  type: METRIC
+                  general:
+                    title: Startup (seconds)
+                  chart:
+                    width: "150"
+                  html:
+                    javascript: document.getElementById(${this}.id + "Icon").className = "fa fa-clock-o";
+                  columns:
+                    - id: value
+                      pattern: "#"
+                  lookup:
+                    uuid: metrics
+                    filter:
+                      - column: metric
+                        function: EQUALS_TO
+                        args:
+                          - jupyterhub_hub_startup_duration_seconds_sum
+                    group:
+                      - functions:
+                          - source: value
+      - columns:
+          - components:
+              - html: <hr />
+      - columns:
+          - span: 4
+            components:
+              - settings:
+                  type: barchart
+                  general:
+                    title: Server Spawn
+                  chart:
+                    resizable: true
+                  filter:
+                    enabled: true
+                    listening: true
+                  lookup:
+                    filter:
+                      - column: "Metric"
+                        function: EQUALS_TO
+                        args:
+                          - jupyterhub_server_spawn_duration_seconds_count
+                    uuid: metrics
+                    group:
+                      - columnGroup:
+                          source: Label
+                        functions:
+                          - source: Label
+                          - source: Value
+          - span: 4
+            components:
+              - settings:
+                  type: barchart
+                  general:
+                    title: Server Stop
+                  filter:
+                    enabled: true
+                    listening: true
+                  lookup:
+                    filter:
+                      - column: "Metric"
+                        function: EQUALS_TO
+                        args:
+                          - jupyterhub_server_stop_seconds_count
+                    uuid: metrics
+                    group:
+                      - columnGroup:
+                          source: Label
+                        functions:
+                          - source: Label
+                          - source: Value
+          - span: 4
+            components:
+              - settings:
+                  type: barchart
+                  general:
+                    title: Proxy Add
+                  lookup:
+                    filter:
+                      - column: "Metric"
+                        function: EQUALS_TO
+                        args:
+                          - jupyterhub_proxy_add_duration_seconds_count
+                    uuid: metrics
+                    group:
+                      - columnGroup:
+                          source: Label
+                        functions:
+                          - source: Label
+                          - source: Value
+      - columns:
+          - components:
+              - settings:
+                  type: barchart
+                  extraConfiguration: >-
+                    {
+                      "xAxis": {  
+                        "axisLabel": {
+                          "hideOverlap": true
+                        }
+                      }
+                    }
+                  chart:
+                    resizable: true
+                  axis:
+                    x:
+                      labels_angle: 12
+                  columns:
+                    - id: Request Details
+                      expression: >-
+                        value.replaceAll("code=", "")
+                             .replaceAll("handler=", "")
+                             .replaceAll("method=", "")
+                             .replaceAll("\"", "")
+                             .replaceAll("jupyterhub.handlers.metrics.", "")                             
+                             .replaceAll("jupyterhub.apihandlers.", "")
+                             .replaceAll("jupyterhub.handlers.", "")
+                             .replaceAll("pages.", "")
+                             .replaceAll("auth.", "")
+                             .replaceAll("users.", "")
+                             .replaceAll("static.", "")
+                  lookup:
+                    filter:
+                      - column: "Metric"
+                        function: EQUALS_TO
+                        args:
+                          - jupyterhub_request_duration_seconds_count
+                    uuid: metrics
+                    sort:
+                      - column: value
+                        sortOrder: DESCENDING
+                    group:
+                      - columnGroup:
+                          source: Label
+                        functions:
+                          - source: Label
+                            column: Request Details
+                          - source: Value

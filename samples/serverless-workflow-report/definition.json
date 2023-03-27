@@ -1,0 +1,25 @@
+{
+  "type": "sample",
+  "category": "dashbuilder",
+  "status": "ok",
+  "title": "Serverless Workflow Report",
+  "description": "Serverless Workflow Report",
+  "cover": "./serverless-workflow-report.svg",
+  "tags": ["serverless workflow", "swf", "dashbuilder"],
+  "dependencies": [],
+  "related_to": [],
+  "resources": [],
+  "authors": [
+    {
+      "name": "William Siqueira",
+      "email": "",
+      "github": "https://github.com/jesuino",
+      "social": [
+        {
+          "network": "twitter",
+          "id": "@william_antonio"
+        }
+      ]
+    }
+  ]
+}

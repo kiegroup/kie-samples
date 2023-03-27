@@ -1,0 +1,25 @@
+{
+  "type": "sample",
+  "category": "dashbuilder",
+  "status": "ok",
+  "title": "Triton Server Dashboard",
+  "description": "Dashboard to Monitor Triton Inference Server",
+  "cover": "./triton-server-dashboard.svg",
+  "tags": ["triton", "AI", "dashboard", "dashbuilder"],
+  "dependencies": [],
+  "related_to": [],
+  "resources": [],
+  "authors": [
+    {
+      "name": "William Siqueira",
+      "email": "",
+      "github": "https://github.com/jesuino",
+      "social": [
+        {
+          "network": "twitter",
+          "id": "@william_antonio"
+        }
+      ]
+    }
+  ]
+}

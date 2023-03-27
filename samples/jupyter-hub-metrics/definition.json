@@ -1,0 +1,25 @@
+{
+  "type": "sample",
+  "category": "dashbuilder",
+  "status": "ok",
+  "title": "Jupyter Hub Metrics",
+  "description": "Jupyter Hub Metrics",
+  "cover": "./jupyter-hub-metrics.svg",
+  "tags": ["jupyterhub", "dashboard", "AI", "dashbuilder"],
+  "dependencies": [],
+  "related_to": [],
+  "resources": [],
+  "authors": [
+    {
+      "name": "William Siqueira",
+      "email": "",
+      "github": "https://github.com/jesuino",
+      "social": [
+        {
+          "network": "twitter",
+          "id": "@william_antonio"
+        }
+      ]
+    }
+  ]
+}

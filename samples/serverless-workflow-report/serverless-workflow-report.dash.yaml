@@ -1,0 +1,366 @@
+global:
+  mode: dark
+  settings:
+    html:
+      html: >-
+        <div id="${this}" class="card-pf card-pf-aggregate-status" style="background-color: ${bgColor}; width: 90%; height: 80px;margin: 10px; border-radius: 10px">
+          <h2 style="font-weight: 600; font-size: large" id="${this}Value">${value} <span id="${this}Suffix" class=""></span></h2>
+          <p style="font-weight: 400" id="${this}Title"><em id="${this}Icon" class=""></em> ${title}</p>
+        </div>
+properties:
+  dataIndexUrl: https://your.data.index.url.com
+datasets:
+  - uuid: processInstances
+    expression: >-
+      $.data.ProcessInstances.[ id, processId, processName, serviceUrl, state, $fromMillis($toMillis(start)), $fromMillis($toMillis(lastUpdate)), end ? $toMillis(end) - $toMillis(start) : -1, error ? error.message : ""]
+    # Use this with real data
+    # url: ${dataIndexUrl}/graphql/?query=%7B%0A%20%20ProcessInstances%20%7B%0A%20%20%20%20id%0A%20%20%20%20processId%0A%20%20%20%20processName%0A%20%20%20%20serviceUrl%0A%20%20%20%20state%0A%20%20%20%20start%0A%20%20%20%20end%0A%20%20%20%20lastUpdate%0A%20%20%20%20error%20%7B%20%20%20%20%20%20%0A%20%20%20%20%20%20message%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A    
+    url: https://raw.githubusercontent.com/kiegroup/kie-samples/main/samples/serverless-workflow-report/sampleResponse.json
+    cacheEnabled: true
+    refreshTime: "30minute"
+    columns:
+      - id: id
+        type: LABEL
+      - id: processId
+        type: LABEL
+      - id: processName
+        type: LABEL
+      - id: serviceUrl
+        type: LABEL
+      - id: state
+        type: LABEL
+      - id: startDate
+        type: DATE
+      - id: lastUpdate
+        type: DATE
+      - id: duration
+        type: number
+      - id: errorMessage
+        type: LABEL
+pages:
+  - name: Workflows Summary
+    properties:
+      margin-left: 5px
+    rows:
+      - columns:
+          - components:
+              - html: "Serverless Workflow Summary <hr />"
+                properties:
+                  font-size: x-large
+              - html: "Filter"
+                properties:
+                  font-weight: bolder
+              - properties:
+                  width: "150px"
+                  margin-bottom: "20px"
+                settings:
+                  type: SELECTOR
+                  general:
+                    text: "Filter"
+                  filter:
+                    enabled: true
+                    notification: true
+                  lookup:
+                    uuid: processInstances
+                    group:
+                      - columnGroup:
+                          source: processId
+                        functions:
+                          - source: processId
+                            column: Workflow
+      - columns:
+          - span: 2
+            components:
+              - settings:
+                  type: METRIC
+                  filter:
+                    enabled: true
+                    listening: true
+                  general:
+                    title: Total Workflows
+                  chart:
+                    width: "150"
+                    height: "90"
+                  columns:
+                    - id: Total
+                      pattern: "#"
+                  lookup:
+                    uuid: processInstances
+                    group:
+                      - functions:
+                          - source: Total
+                            function: COUNT
+          - span: 2
+            properties:
+              color: cyan
+            components:
+              - settings:
+                  type: METRIC
+                  filter:
+                    enabled: true
+                    listening: true
+                  general:
+                    title: Completed
+                  chart:
+                    width: "150"
+                    height: "90"
+                  columns:
+                    - id: Total
+                      pattern: "#"
+                  lookup:
+                    uuid: processInstances
+                    filter:
+                      - column: state
+                        function: EQUALS_TO
+                        args:
+                          - COMPLETED
+                    group:
+                      - functions:
+                          - source: Total
+                            function: COUNT
+          - span: 2
+            properties:
+              color: green
+            components:
+              - settings:
+                  type: METRIC
+                  filter:
+                    enabled: true
+                    listening: true
+                  general:
+                    title: Active
+                  chart:
+                    width: "150"
+                    height: "90"
+                  columns:
+                    - id: Total
+                      pattern: "#"
+                  lookup:
+                    uuid: processInstances
+                    filter:
+                      - column: state
+                        function: EQUALS_TO
+                        args:
+                          - ACTIVE
+                    group:
+                      - functions:
+                          - source: Total
+                            function: COUNT
+          - span: 2
+            properties:
+              color: orange
+            components:
+              - settings:
+                  type: METRIC
+                  filter:
+                    enabled: true
+                    listening: true
+                  general:
+                    title: Pending
+                  chart:
+                    width: "150"
+                    height: "90"
+                  columns:
+                    - id: Total
+                      pattern: "#"
+                  lookup:
+                    uuid: processInstances
+                    filter:
+                      - column: state
+                        function: EQUALS_TO
+                        args:
+                          - PENDING
+                    group:
+                      - functions:
+                          - source: Total
+                            function: COUNT
+          - span: 2
+            properties:
+              color: orange
+            components:
+              - settings:
+                  type: METRIC
+                  filter:
+                    enabled: true
+                    listening: true
+                  general:
+                    title: Aborted
+                  chart:
+                    width: "150"
+                    height: "90"
+                  columns:
+                    - id: Total
+                      pattern: "#"
+                  lookup:
+                    uuid: processInstances
+                    filter:
+                      - column: state
+                        function: EQUALS_TO
+                        args:
+                          - ABORTED
+                    group:
+                      - functions:
+                          - source: Total
+                            function: COUNT
+          - span: 2
+            properties:
+              color: red
+            components:
+              - settings:
+                  type: METRIC
+                  filter:
+                    enabled: true
+                    listening: true
+                  general:
+                    title: Error
+                  chart:
+                    width: "150"
+                    height: "90"
+                  columns:
+                    - id: Total
+                      pattern: "#"
+                  lookup:
+                    uuid: processInstances
+                    filter:
+                      - column: state
+                        function: EQUALS_TO
+                        args:
+                          - ERROR
+                    group:
+                      - functions:
+                          - source: Total
+                            function: COUNT
+      - columns:
+          - components:
+              - html: "<hr />"
+      - columns:
+          - span: 4
+            properties:
+              background-color: white
+            components:
+              - settings:
+                  type: BARCHART
+                  general:
+                    title: Total by Workflow
+                  axis:
+                    y:
+                      labels_show: false
+                  filter:
+                    enabled: true
+                    listening: true
+                  chart:
+                    resizable: true                    
+                    height: 230
+                    grid:
+                      x: false
+                      y: false
+                  columns:
+                    - id: Total
+                      pattern: "#"
+                  lookup:
+                    uuid: processInstances
+                    group:
+                      - columnGroup:
+                          source: processId
+                        functions:
+                          - source: processId
+                          - source: processId
+                            function: COUNT
+                            column: Total
+          - span: 4
+            properties:
+              background-color: white
+            components:
+              - settings:
+                  type: AREACHART
+                  general:
+                    title: Start Date
+                  axis:
+                    y:
+                      labels_show: false
+                    x:
+                      labels_angle: 12
+                  filter:
+                    enabled: true
+                    listening: true
+                  chart:
+                    zoom: true
+                    resizable: true
+                    height: 230
+                    grid:
+                      x: false
+                      y: false
+                  columns:
+                    - id: Total Started
+                      pattern: "#"
+                  lookup:
+                    uuid: processInstances
+                    sort:
+                      - column: startDate
+                        sortOrder: ASCENDING
+                    group:
+                      - columnGroup:
+                          emptyIntervals: true
+                          source: startDate
+                        functions:
+                          - source: startDate
+                          - source: startDate
+                            function: COUNT
+                            column: Total Started
+          - span: 4
+            properties:
+              background-color: white
+            components:
+              - settings:
+                  type: BARCHART
+                  general:
+                    title: Average Duration
+                  axis:
+                    y:
+                      labels_show: false
+                  filter:
+                    enabled: true
+                    listening: true
+                  chart:
+                    resizable: true
+                    height: 230
+                    grid:
+                      x: false
+                      y: false
+                  lookup:
+                    uuid: processInstances
+                    group:
+                      - columnGroup:
+                          source: processId
+                        functions:
+                          - source: processId
+                          - source: duration
+                            function: AVERAGE
+                            column: Total
+          - components:
+              - html: "<hr />Workflows List"
+                properties:
+                  font-size: x-large
+                  margin-bottom: 20px
+      - columns:
+          - components:
+              - settings:
+                  component: table
+                  external:
+                    width: 100%
+                  filter:
+                    enabled: true
+                    listening: true
+                  lookup:
+                    uuid: processInstances
+                    group:
+                      - functions:
+                          - source: id
+                          - source: processId
+                          - source: processName
+                          - source: serviceUrl
+                          - source: state
+                          - source: startDate
+                          - source: lastUpdate
+                          - source: duration
+                          - source: errorMessage
