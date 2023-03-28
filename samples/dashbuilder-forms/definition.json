@@ -1,0 +1,25 @@
+{
+  "type": "sample",
+  "category": "dashbuilder",
+  "status": "ok",
+  "title": "Dashbuilder Forms",
+  "description": "Sample Dashbuilder YAML with Forms",
+  "cover": "./dashbuilder-forms.svg",
+  "tags": ["forms", "dashbuilder"],
+  "dependencies": [],
+  "related_to": [],
+  "resources": [],
+  "authors": [
+    {
+      "name": "William Siqueira",
+      "email": "",
+      "github": "https://github.com/jesuino",
+      "social": [
+        {
+          "network": "twitter",
+          "id": "@william_antonio"
+        }
+      ]
+    }
+  ]
+}

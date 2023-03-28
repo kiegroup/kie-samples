@@ -1,0 +1,90 @@
+properties:
+  greetingWorkflowUrl: http://localhost:8080
+pages:
+  - name: JSON Greet
+    components:
+      - type: EXTERNAL
+        properties:
+          height: 500px
+          componentId: uniforms
+          uniforms.url: ${greetingWorkflowUrl}/jsongreet
+          uniforms.schema: >-
+            {                       
+               "type":"object",
+               "properties":{
+                  "workflowdata": {
+                      "title": "JSON Greet",
+                      "default": { "language": "English", "name": "John" },
+                      "type": "object",
+                      "properties": {
+                          "name":{
+                             "type":"string"
+                          },
+                          "language":{
+                             "type":"string",
+                             "allowedValues": ["English", "Spanish"]
+                          }
+                      },
+                      "required":[
+                         "name", "language"
+                      ]
+                  }
+               }
+            }
+  - name: YAML Greet
+    components:
+      - type: EXTERNAL
+        properties:
+          height: 500px
+          componentId: uniforms
+          uniforms.url: ${greetingWorkflowUrl}/yamlgreet
+          uniforms.schema: >-
+            {
+               "type":"object",
+               "properties":{
+                  "workflowdata": {
+                      "title": "YAML Greet",
+                      "default": { "language": "English", "name": "John" },
+                      "type": "object",
+                      "properties": {
+                          "name":{
+                             "type":"string"
+                          },
+                          "language":{
+                             "type":"string",
+                             "allowedValues": ["English", "Spanish"]
+                          }
+                      },
+                      "required":[
+                         "name", "language"
+                      ]
+                  }
+                  
+               }
+            }
+  - name: index
+    properties:
+      margin-left: 5px
+    components:
+      - html: >-
+          <h2><strong>Greeting Serverless Workflow</strong></h2>
+          <p>
+              This is a form for the <a href="https://github.com/kiegroup/kogito-examples/tree/stable/kogito-quarkus-examples/serverless-workflow-greeting-quarkus">Greeting Serverless Workflow</a>. Use the form to start new workflows.
+          </p>
+        properties:
+          margin-bottom: 40px
+      - type: TABS
+        properties:
+          targetDivId: sw_forms_div
+          navGroupId: sw_forms_group
+      - type: DIV
+        properties:
+          width: "100%"
+          ID_PARAMETER: sw_forms_div
+navTree:
+  root_items:
+    - id: sw_forms_group
+      type: GROUP
+      children:
+        - page: JSON Greet
+        - page: YAML Greet

@@ -1,0 +1,25 @@
+{
+  "type": "sample",
+  "category": "dashbuilder",
+  "status": "ok",
+  "title": "Model Mesh Metrics",
+  "description": "Model Mesh Metrics Dashboard",
+  "cover": "./model-mesh-metrics.svg",
+  "tags": ["ModelMesh", "metrics", "dashboard", "dashbuilder"],
+  "dependencies": [],
+  "related_to": [],
+  "resources": [],
+  "authors": [
+    {
+      "name": "William Siqueira",
+      "email": "",
+      "github": "https://github.com/jesuino",
+      "social": [
+        {
+          "network": "twitter",
+          "id": "@william_antonio"
+        }
+      ]
+    }
+  ]
+}
