@@ -1,0 +1,25 @@
+{
+  "type": "sample",
+  "category": "serverless-workflow",
+  "status": "ok",
+  "title": "Greeting workflow",
+  "description": "JSON based greeting workflow",
+  "cover": "./greeting.sw.json.svg",
+  "tags": ["serverless workflow", "json"],
+  "dependencies": [],
+  "related_to": [],
+  "resources": [],
+  "authors": [
+    {
+      "name": "Guilherme Caponetto",
+      "email": "",
+      "github": "https://github.com/caponetto",
+      "social": [
+        {
+          "network": "twitter",
+          "id": "@caponetto"
+        }
+      ]
+    }
+  ]
+}

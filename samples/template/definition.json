@@ -1,7 +1,7 @@
 {
     "type": "sample | pattern",
     "category": [
-        "serverles-workflow",
+        "serverless-workflow",
         "serverless-decision",
         "dashbuilder"
     ],
