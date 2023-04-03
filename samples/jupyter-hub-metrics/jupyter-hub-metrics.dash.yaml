@@ -233,7 +233,7 @@ pages:
                     uuid: metrics
                     sort:
                       - column: value
-                        sortOrder: DESCENDING
+                        order: DESCENDING
                     group:
                       - columnGroup:
                           source: Label

@@ -56,7 +56,7 @@ pages:
                 settings:
                   type: SELECTOR
                   general:
-                    text: "Filter"
+                    title: "Filter"
                   filter:
                     enabled: true
                     notification: true
@@ -297,7 +297,7 @@ pages:
                     uuid: processInstances
                     sort:
                       - column: startDate
-                        sortOrder: ASCENDING
+                        order: ASCENDING
                     group:
                       - columnGroup:
                           emptyIntervals: true

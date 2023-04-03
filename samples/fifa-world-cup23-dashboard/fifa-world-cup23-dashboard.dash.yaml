@@ -125,6 +125,7 @@ pages:
                                 - id: Total Goals
                                   pattern: "#"
                             lookup:
+                                uuid: fifa_matches
                                 group:
                                     - functions:
                                           - source: Total Goals
@@ -136,6 +137,7 @@ pages:
                             general:
                                 title: Average Goals by Match
                             lookup:
+                                uuid: fifa_matches
                                 group:                                    
                                     - functions:
                                           - source: Total Goals
@@ -147,6 +149,7 @@ pages:
                             general:
                                 title: Average Temperature
                             lookup:
+                                uuid: fifa_matches
                                 group:
                                     - functions:
                                           - source: Temperature
@@ -158,6 +161,7 @@ pages:
                             general:
                                 title: Average Attendance
                             lookup:
+                                uuid: fifa_matches
                                 group:
                                     - functions:
                                           - source: Attendance
@@ -174,6 +178,7 @@ pages:
                                 x:
                                     labels_angle: 30
                             lookup:
+                                uuid: fifa_matches
                                 group:
                                     - columnGroup:
                                           source: Day
@@ -193,6 +198,7 @@ pages:
                                     labels_angle: 15
 
                             lookup:
+                                uuid: fifa_matches
                                 sort:
                                     - column: Goals
                                       order: DESCENDING
@@ -216,6 +222,7 @@ pages:
                                 title: Goals by Weather
                                 subtitle: Bubble shows total matches
                             lookup:
+                                uuid: fifa_matches
                                 sort:
                                     - column: TOTAL MATCHES
                                       order: ASCENDING
@@ -248,6 +255,7 @@ pages:
                                 y:
                                     title: Attendance
                             lookup:
+                                uuid: fifa_matches
                                 group:
                                     - columnGroup:
                                           source: Match Name
@@ -282,6 +290,7 @@ pages:
                                 - id: Team 2 Score
                                   pattern: "#"
                             lookup:
+                                uuid: fifa_matches
                                 group:
                                     - functions:
                                           - source: Temperature
