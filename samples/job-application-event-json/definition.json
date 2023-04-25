@@ -1,0 +1,25 @@
+{
+  "type": "sample",
+  "category": "serverless-workflow",
+  "status": "ok",
+  "title": "Applicant Workflow",
+  "description": "Job Application Events Example",
+  "cover": "./applicant-workflow.sw.json.svg",
+  "tags": ["serverless workflow", "json", "events"],
+  "dependencies": [],
+  "related_to": [],
+  "resources": [],
+  "authors": [
+    {
+      "name": "Guilherme Caponetto",
+      "email": "",
+      "github": "https://github.com/caponetto",
+      "social": [
+        {
+          "network": "twitter",
+          "id": "@caponetto"
+        }
+      ]
+    }
+  ]
+}

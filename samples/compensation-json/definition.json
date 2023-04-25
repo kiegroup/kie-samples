@@ -1,0 +1,25 @@
+{
+  "type": "sample",
+  "category": "serverless-workflow",
+  "status": "ok",
+  "title": "Workflow Error example",
+  "description": "An example of how compensation works",
+  "cover": "./compensation.sw.json.svg",
+  "tags": ["serverless workflow", "json"],
+  "dependencies": [],
+  "related_to": [],
+  "resources": [],
+  "authors": [
+    {
+      "name": "Guilherme Caponetto",
+      "email": "",
+      "github": "https://github.com/caponetto",
+      "social": [
+        {
+          "network": "twitter",
+          "id": "@caponetto"
+        }
+      ]
+    }
+  ]
+}
