@@ -1,0 +1,40 @@
+name: "Combine Sample Definitions"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "samples/**"
+
+jobs:
+  merge_definitions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.KIE_TOOLS_BOT_TOKEN }}
+
+      - name: "Setup Node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: "Install dependencies"
+        run: npm install ajv@8.12.0
+
+      - name: "Validate sample definition files"
+        run: node .github/supporting-files/validate-sample-definitions.js
+
+      - name: "Combine sample definitions"
+        run: node .github/supporting-files/combine-sample-definitions.js
+
+      - name: "Commit and push"
+        run: |
+          git config --global user.email "kietoolsbot@gmail.com"
+          git config --global user.name "KIE Tools Bot (kiegroup)"
+          git add .github/supporting-files/sample-definitions.json
+          git commit -m "Update sample definitions" || echo "No changes."
+          git push origin main
