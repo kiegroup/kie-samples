@@ -5,7 +5,7 @@
   "title": "Greeting workflow",
   "description": "JSON based greeting workflow",
   "cover": "./greeting.sw.json.svg",
-  "tags": ["serverless workflow", "json"],
+  "tags": ["serverless workflow", "swf", "json"],
   "dependencies": [],
   "related_to": [],
   "resources": [],
