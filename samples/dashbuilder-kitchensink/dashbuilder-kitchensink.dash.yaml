@@ -36,7 +36,6 @@ pages:
               - type: DIV
                 properties:
                   divId: navigation_tree_div
-
   - name: Menu
     components:
       - type: MENU
@@ -471,6 +470,17 @@ pages:
                           - source: Product
                           - source: Quantity
                           - source: Quantity2
+  - name: Table
+    components:
+        - html: "<h4><strong>Table (default type)</strong></h4>"
+        - settings:
+            table:
+              pageSize: 10  
+            chart:
+              resizable: true
+            lookup:
+              uuid: products
+
   - name: Bar Chart
     rows:
       - columns:
@@ -584,6 +594,7 @@ pages:
       - type: DIV
         properties:
           divId: displayers_div
+          width: 100%          
   - name: Layout
     properties:
       margin: 10px
@@ -721,6 +732,62 @@ pages:
               <strong>Javascript not supported</strong> Javascript is not supported inside HTML elements.
             </div>
           </p>
+  - name: Screen
+    properties:
+      margin: 10px
+    components:
+      - html: >-
+          <p>You can Embed other pages any where you want with the <strong>screen</strong> component. This is useful for reusing parts of pages. Below you can see the Layout embeded page:
+          </p>
+      - screen: Layout
+        properties:
+            border: dashed 1px             
+            padding: 20px
+            margin: 10px
+  - name: Settings and Global
+    properties:
+      margin: 10px
+    components:
+      - html: >-
+          <p>This is not about components, but special type of settings to configure your dashboard:</p>
+          <h2>Properties</h2>
+          <p>In this top level setting of YAML you can define custom properties that will text-replaced in the rest of the YAML. It is useful to make it easy to reuse dashboards. see an example:<p>
+          <pre>
+            properties:
+                name: World
+            pages:
+                - components:
+                - html: Hello ${name}</pre>
+          <h2> Global</h2>
+          <p> In this section we can declare special configuration that applies for the whole YAML</p>
+          <ul>
+          <li><strong>mode</strong>: Can be <em>dark</em> or <em>light</em>. It changes the whole dashboard appearance</li>
+          <li><strong>allowUrlParameters</strong>: If true then the properties can be replaced using query paramerter. It does not work in editor mode, only when the dashboard is running in client mode (deployed). 
+                    In the example above, you could change the <em>name</em> property if you access the dashboard with the query parameter name: <em>http://mydashboard.com?name=Mundo</em></li>
+          <li><strong>settings/displayer</strong>: it is possible to declare a global settings for all displayers in this page using this. Notice it does not work for lookup section, only for general settings. 
+                    In the example below all charts will have the title <em>Common Title</em>:
+            <pre>
+            global:
+                settings:
+                    general:
+                    title: Common title
+            datasets:
+                - uuid: test
+                    content: >-
+                                [["a", 1]]
+            pages:
+                - components:
+                    - settings:
+                        type: BARCHART
+                        lookup:
+                            uuid: test
+                    - settings:
+                        type: BARCHART
+                        lookup:
+                            uuid: test</pre>
+          </li>
+          </ul>
+
 navTree:
   root_items:
     - type: GROUP
@@ -732,6 +799,7 @@ navTree:
         - page: Displayers
         - page: External Components
         - page: Navigation
+        - page: Settings and Global
     - type: GROUP
       id: Displayers
       children:
@@ -744,6 +812,7 @@ navTree:
         - page: Map
         - page: Metric
         - page: Selectors
+        - page: Table
     - type: GROUP
       id: Components
       children:
@@ -756,6 +825,7 @@ navTree:
     - type: GROUP
       id: Navigation
       children:
+        - page: Screen
         - page: Tiles
         - page: Carousel
         - page: Menu
