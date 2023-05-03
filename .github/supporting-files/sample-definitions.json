@@ -273,6 +273,30 @@
   },
   {
     "type": "sample",
+    "category": "serverless-workflow",
+    "status": "ok",
+    "title": "Order workflow",
+    "description": "Order workflow sample",
+    "cover": "./order.svg",
+    "tags": [
+      "serverless workflow",
+      "swf",
+      "json"
+    ],
+    "dependencies": [],
+    "related_to": [],
+    "resources": [],
+    "authors": [
+      {
+        "name": "Donato Marrazzo",
+        "email": "",
+        "github": "https://github.com/dmarrazzo"
+      }
+    ],
+    "sample_path": "samples/order-swf"
+  },
+  {
+    "type": "sample",
     "category": "dashbuilder",
     "status": "ok",
     "title": "Products Dashboard",
