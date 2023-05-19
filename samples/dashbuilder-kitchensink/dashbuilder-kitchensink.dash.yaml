@@ -793,10 +793,10 @@ navTree:
     - type: GROUP
       id: MainGroup
       children:
+        - page: Displayers 
         - page: Layout
         - page: HTML & CSS
-        - page: Data Sets
-        - page: Displayers
+        - page: Data Sets        
         - page: External Components
         - page: Navigation
         - page: Settings and Global
