@@ -1,3 +1,7 @@
+global:
+  settings:
+    chart:
+      resizable: true
 pages:
   - name: index
     properties:
@@ -18,9 +22,7 @@ pages:
           width: 100%
           navGroupId: MainGroup
           targetDivId: all_div
-      - type: DIV
-        properties:
-          divId: all_div
+      - div: all_div
   - name: Tree
     rows:
       - columns:
@@ -33,9 +35,7 @@ pages:
                   targetDivId: navigation_tree_div
           - span: "9"
             components:
-              - type: DIV
-                properties:
-                  divId: navigation_tree_div
+              - div: navigation_tree_div
   - name: Menu
     components:
       - type: MENU
@@ -43,9 +43,7 @@ pages:
           width: 100%
           navGroupId: Displayers
           targetDivId: navigation_menu_div
-      - type: DIV
-        properties:
-          divId: navigation_menu_div
+      - div: navigation_menu_div
   - name: Carousel
     components:
       - type: CAROUSEL
@@ -67,9 +65,7 @@ pages:
           width: 100%
           navGroupId: Navigation
           targetDivId: navigation_div
-      - type: DIV
-        properties:
-          divId: navigation_div
+      - div: navigation_div
   - name: Timeseries
     components:
       - settings:
@@ -213,9 +209,7 @@ pages:
           width: 100%
           navGroupId: Components
           targetDivId: external_components_div
-      - type: DIV
-        properties:
-          divId: external_components_div
+      - div: external_components_div
   - name: Meter
     properties:
       font-size: x-large
@@ -227,8 +221,8 @@ pages:
           type: METERCHART
           general:
             title: "Memory Usage"
-            visible: true
           chart:
+            resizable: false
             legend:
               show: "true"
               position: bottom
@@ -248,10 +242,14 @@ pages:
   - name: Selectors
     components:
       - html: >-
-          Dashbuilder Displayers can filter each other. For filtering only we have selectors components. You can enable filter using the filter section:<br /> <pre>
+          <p>Dashbuilder Displayers can filter each other. For filtering only we have selectors components. You can enable filter using the filter section, the component that filter others:<br /> <pre>
           filter:
-              enabled: 'true'
-              notification: 'true'</pre>
+              notification: true</pre>
+          </p><p>
+            Then on the component that will be filtered:<pre>
+          filter:
+              listening: true</pre>
+          </p>
 
       - html: >-
           <strong> subtype DROPDOWN (default) </strong>
@@ -394,9 +392,10 @@ pages:
       - columns:
           - span: "6"
             components:
-              - html: "<h4><strong>subtype PIE (default)</strong></h4><br />"
               - settings:
                   type: PIECHART
+                  general:
+                    title: subtype pie (default)
                   lookup:
                     uuid: products
                     group:
@@ -407,10 +406,11 @@ pages:
                           - source: Quantity
           - span: "6"
             components:
-              - html: "<h4><strong>subtype DONUT</strong></h4><br />"
               - settings:
                   type: PIECHART
                   subtype: DONUT
+                  general:
+                    title: subtype donut
                   lookup:
                     uuid: products
                     group:
@@ -442,10 +442,10 @@ pages:
       - columns:
           - span: "6"
             components:
-              - html: "<h4><strong>subtype AREA (default)</strong></h4><br />"
-
               - settings:
                   type: AREACHART
+                  general:
+                    title: subtype area (default)
                   lookup:
                     uuid: products
                     group:
@@ -457,10 +457,11 @@ pages:
                           - source: Quantity2
           - span: "6"
             components:
-              - html: "<h4><strong>subtype AREA_STACKED</strong></h4><br />"
               - settings:
                   type: AREACHART
                   subtype: AREA_STACKED
+                  general:
+                    title: subtype AREA_STACKED
                   lookup:
                     uuid: products
                     group:
@@ -472,23 +473,24 @@ pages:
                           - source: Quantity2
   - name: Table
     components:
-        - html: "<h4><strong>Table (default type)</strong></h4>"
-        - settings:
-            table:
-              pageSize: 10  
-            chart:
-              resizable: true
-            lookup:
-              uuid: products
+      - html: "<h4><strong>Table (default type)</strong></h4>"
+      - settings:
+          table:
+            pageSize: 10
+          chart:
+            resizable: true
+          lookup:
+            uuid: products
 
   - name: Bar Chart
     rows:
       - columns:
           - span: "6"
             components:
-              - html: "<h4><strong>subtype COLUMN (default)</strong></h4><br />"
               - settings:
                   type: BARCHART
+                  general:
+                    title: subtype COLUMN (default)
                   lookup:
                     uuid: products
                     group:
@@ -500,10 +502,14 @@ pages:
                           - source: Quantity2
           - span: "6"
             components:
-              - html: "<h4><strong>subtype BAR</strong></h4><br />"
               - settings:
                   type: BARCHART
                   subtype: BAR
+                  general:
+                    title: subtype BAR
+                  chart:
+                    margin:
+                      left: 80
                   lookup:
                     uuid: products
                     group:
@@ -516,10 +522,11 @@ pages:
       - columns:
           - span: "6"
             components:
-              - html: "<h4><strong>subtype COLUMN_STACKED</strong></h4><br />"
               - settings:
                   type: BARCHART
                   subtype: COLUMN_STACKED
+                  general:
+                    title: Column Stacked
                   lookup:
                     uuid: products
                     group:
@@ -531,10 +538,14 @@ pages:
                           - source: Quantity2
           - span: "6"
             components:
-              - html: "<h4><strong>subType BAR</strong></h4><br />"
               - settings:
                   type: BARCHART
                   subtype: BAR_STACKED
+                  general:
+                    title: subtype BAR
+                  chart:
+                    margin:
+                      left: 80
                   lookup:
                     uuid: products
                     group:
@@ -549,9 +560,10 @@ pages:
       - columns:
           - span: "6"
             components:
-              - html: "<h4><strong>subtype line (default)</strong></h4><br />"
               - settings:
                   type: LINECHART
+                  general:
+                    title: subtype line (default)
                   lookup:
                     uuid: products
                     group:
@@ -563,10 +575,11 @@ pages:
                           - source: Quantity2
           - span: "6"
             components:
-              - html: "<h4><strong>subtype smooth</strong></h4><br />"
               - settings:
                   type: LINECHART
                   subtype: SMOOTH
+                  general:
+                    title: subtype smooth
                   lookup:
                     uuid: products
                     group:
@@ -591,10 +604,10 @@ pages:
           width: 100%
           navGroupId: Displayers
           targetDivId: displayers_div
-      - type: DIV
+      - div: displayers_div
         properties:
-          divId: displayers_div
-          width: 100%          
+          width: 100%
+          margin-top: 20px
   - name: Layout
     properties:
       margin: 10px
@@ -705,13 +718,20 @@ pages:
       margin: 10px
     components:
       - html: >-
-          <p>Dashbuilder Support HTML components using the <i>html</i> element and CSS 2 properties using <i>properties</i> 
+          <p>Dashbuilder Support HTML components using the <i>html</i> element, markdown using <i>markdown</i> component and CSS 2 properties using <i>properties</i> 
           object that applies to any component (pages, row, columns and component). A page with font-size xxx-large could use the following declaration:
             <pre>pages:
            - components:
                 - html: Hello World
                   properties:
                     font-size: xxx-large</pre>
+          </p>
+          <p>
+            Markdown is another markup language supported by Dashbuilder. YOu just have to use the <i>markdown</i> component and it will work:
+          <pre>pages:
+           - components:
+                - markdown: >-
+                    # *Hello World* with Markdown</pre>
           </p>
           <p>
             When using HTML you can make use of any library used by Dashbuilder. Currently it used Patternfly V3. Here's a sample panel:
@@ -741,9 +761,9 @@ pages:
           </p>
       - screen: Layout
         properties:
-            border: dashed 1px             
-            padding: 20px
-            margin: 10px
+          border: dashed 1px
+          padding: 20px
+          margin: 10px
   - name: Settings and Global
     properties:
       margin: 10px
@@ -793,10 +813,10 @@ navTree:
     - type: GROUP
       id: MainGroup
       children:
-        - page: Displayers 
+        - page: Displayers
         - page: Layout
         - page: HTML & CSS
-        - page: Data Sets        
+        - page: Data Sets
         - page: External Components
         - page: Navigation
         - page: Settings and Global
