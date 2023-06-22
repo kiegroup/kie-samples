@@ -25,8 +25,6 @@ global:
                     </div>
         export:
             png: true
-        lookup:
-            uuid: fifa_matches
 datasets:
     - uuid: fifa_matches
       url: https://api.fifa.com/api/v3/calendar/matches?from=2022-11-20T00%3A00%3A00Z&to=2022-12-20T23%3A59%3A59Z&language=en&count=500&idSeason=255711
