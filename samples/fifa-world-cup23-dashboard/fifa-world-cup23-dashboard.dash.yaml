@@ -19,16 +19,16 @@ global:
                 x: false
         html:
             html: >-
-                    <div id="${this}" class="card-pf card-pf-aggregate-status" style="margin: 15px; background-color: ${bgColor}; height: 85px; border-radius: 10px">
-                        <h2 style="font-weight: 600; font-size: x-large" id="${this}Value">${value}</h2>
-                        <p style="font-weight: 400" id="${this}Title"><em id="${this}Icon" class=""></em> ${title}</p>
-                    </div>
+                <div id="${this}" class="card-pf card-pf-aggregate-status" style="margin: 15px; background-color: ${bgColor}; height: 85px; border-radius: 10px">
+                    <h2 style="font-weight: 600; font-size: x-large" id="${this}Value">${value}</h2>
+                    <p style="font-weight: 400" id="${this}Title"><em id="${this}Icon" class=""></em> ${title}</p>
+                </div>
         export:
             png: true
 datasets:
     - uuid: fifa_matches
       url: https://api.fifa.com/api/v3/calendar/matches?from=2022-11-20T00%3A00%3A00Z&to=2022-12-20T23%3A59%3A59Z&language=en&count=500&idSeason=255711
-      cacheEnabled: "true"
+      cacheEnabled: true
       expression: >-
           $.Results.[
               ( $.MatchStatus = 0 ? 
@@ -62,11 +62,11 @@ datasets:
           - id: Date
             type: LABEL
           - id: Day
-            type: Label
+            type: LABEL
           - id: Hour
-            type: Label
+            type: LABEL
           - id: Humidity
-            type: Number
+            type: NUMBER
           - id: Temperature
             type: NUMBER
           - id: WindSpeed
@@ -110,8 +110,8 @@ pages:
                                 <hr />
                             </p>
           - properties:
-              margin-bottom: 100px
-              margin-top: 50px
+                margin-bottom: 100px
+                margin-top: 50px
             columns:
                 - span: 3
                   components:
@@ -136,7 +136,7 @@ pages:
                                 title: Average Goals by Match
                             lookup:
                                 uuid: fifa_matches
-                                group:                                    
+                                group:
                                     - functions:
                                           - source: Total Goals
                                             function: AVERAGE
@@ -259,11 +259,11 @@ pages:
                                           source: Match Name
                                       functions:
                                           - source: Match Name
-                                          - source: Attendance                                            
+                                          - source: Attendance
                                             column: Attendance
-                                          - source: Total Goals                                            
+                                          - source: Total Goals
                                             column: Goals
-                                          - source: Total Goals                                            
+                                          - source: Total Goals
                                             column: Goals
 
           - columns:

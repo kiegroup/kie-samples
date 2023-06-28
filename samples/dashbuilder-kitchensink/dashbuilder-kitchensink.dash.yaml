@@ -26,14 +26,14 @@ pages:
   - name: Tree
     rows:
       - columns:
-          - span: "3"
+          - span: 3
             components:
               - type: TREE
                 properties:
                   width: 180px
                   navGroupId: Displayers
                   targetDivId: navigation_tree_div
-          - span: "9"
+          - span: 9
             components:
               - div: navigation_tree_div
   - name: Menu
@@ -352,7 +352,7 @@ pages:
   - name: Map
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - html: "<h4><strong>subtype MAP_REGIONS (default)</strong></h4><br />"
               - settings:
@@ -365,7 +365,7 @@ pages:
                         functions:
                           - source: Country
                           - source: Value
-          - span: "6"
+          - span: 6
             components:
               - html: "<h4><strong>subtype MAP_MARKERS</strong></h4><br />"
               - settings:
@@ -382,7 +382,7 @@ pages:
   - name: Pie Chart
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: PIECHART
@@ -396,7 +396,7 @@ pages:
                         functions:
                           - source: Product
                           - source: Quantity
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: PIECHART
@@ -414,7 +414,7 @@ pages:
   - name: Bubble Chart
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - html: "<h4><strong>Bubble Chart</strong></h4><br />"
               - settings:
@@ -432,7 +432,7 @@ pages:
   - name: Area Chart
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: AREACHART
@@ -447,7 +447,7 @@ pages:
                           - source: Product
                           - source: Quantity
                           - source: Quantity2
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: AREACHART
@@ -466,7 +466,7 @@ pages:
   - name: Timeseries
     components:
       - settings:
-          type: timeseries
+          type: TIMESERIES
           general:
             title: Sample Timeseries
           chart:
@@ -489,7 +489,7 @@ pages:
   - name: Bar Chart
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: BARCHART
@@ -504,7 +504,7 @@ pages:
                           - source: Product
                           - source: Quantity
                           - source: Quantity2
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: BARCHART
@@ -524,7 +524,7 @@ pages:
                           - source: Quantity
                           - source: Quantity2
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: BARCHART
@@ -540,7 +540,7 @@ pages:
                           - source: Product
                           - source: Quantity
                           - source: Quantity2
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: BARCHART
@@ -562,7 +562,7 @@ pages:
   - name: Line Chart
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: LINECHART
@@ -577,7 +577,7 @@ pages:
                           - source: Product
                           - source: Quantity
                           - source: Quantity2
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: LINECHART
@@ -638,19 +638,19 @@ pages:
           - properties:
               border: solid 1px
               text-align: center
-            span: "3"
+            span: 3
             components:
               - html: ROW2 CL1 SPAN 3
           - properties:
               border: solid 1px
               text-align: center
-            span: "3"
+            span: 3
             components:
               - html: ROW2 CL2 SPAN 3
           - properties:
               border: solid 1px
               text-align: center
-            span: "6"
+            span: 6
             components:
               - html: ROW2 CL3 SPAN 6
       - columns:

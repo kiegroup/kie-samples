@@ -26,9 +26,9 @@ datasets:
       ]
     columns:
       - id: name
-        type: label
+        type: LABEL
       - id: time
-        type: number
+        type: NUMBER
 pages:
   - components:
       - settings:
