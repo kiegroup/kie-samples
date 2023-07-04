@@ -1,29 +1,29 @@
 datasets:
   - uuid: github_repos
-    cacheEnabled: "true"
+    cacheEnabled: true
     refreshTime: "10minute"
     expression: >-
       $.items.[name, stargazers_count, forks, watchers_count, open_issues, owner.login, created_at, language ? language : '-', description ]
     url: https://api.github.com/search/repositories?q=stars:>1&s=stars
     columns:
       - id: name
-        type: label
+        type: LABEL
       - id: stars
-        type: number
+        type: NUMBER
       - id: forks
-        type: number
+        type: NUMBER
       - id: watchers
-        type: number
+        type: NUMBER
       - id: open_issues
-        type: number
+        type: NUMBER
       - id: owner_login
-        type: label
+        type: LABEL
       - id: created
-        type: date
+        type: DATE
       - id: language
-        type: label
+        type: LABEL
       - id: description
-        type: text
+        type: TEXT
 pages:
   - properties:
       margin-left: 5px

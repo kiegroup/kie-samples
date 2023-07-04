@@ -1,7 +1,7 @@
 properties:
   # change this according to the desired refresh interval
   refreshInterval: 5
-  # Point to the Quarkus application you want to monitor  
+  # Point to the Quarkus application you want to monitor
   metricsUrl: https://raw.githubusercontent.com/kiegroup/kie-samples/main/samples/quarkus-micrometer-monitoring/metrics
 global:
   settings:
@@ -20,13 +20,13 @@ datasets:
       })
     columns:
       - id: metric
-        type: label
+        type: LABEL
       - id: labels
-        type: label
+        type: LABEL
       - id: value
-        type: number
+        type: NUMBER
       - id: register
-        type: label
+        type: LABEL
 
 pages:
   - properties:

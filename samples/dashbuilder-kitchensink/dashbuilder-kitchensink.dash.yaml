@@ -26,14 +26,14 @@ pages:
   - name: Tree
     rows:
       - columns:
-          - span: "3"
+          - span: 3
             components:
               - type: TREE
                 properties:
                   width: 180px
                   navGroupId: Displayers
                   targetDivId: navigation_tree_div
-          - span: "9"
+          - span: 9
             components:
               - div: navigation_tree_div
   - name: Menu
@@ -66,14 +66,6 @@ pages:
           navGroupId: Navigation
           targetDivId: navigation_div
       - div: navigation_div
-  - name: Timeseries
-    components:
-      - settings:
-          component: timeseries
-          external:
-            width: 100%
-          lookup:
-            uuid: timeseries
   - name: Forms
     components:
       - type: EXTERNAL
@@ -360,7 +352,7 @@ pages:
   - name: Map
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - html: "<h4><strong>subtype MAP_REGIONS (default)</strong></h4><br />"
               - settings:
@@ -373,7 +365,7 @@ pages:
                         functions:
                           - source: Country
                           - source: Value
-          - span: "6"
+          - span: 6
             components:
               - html: "<h4><strong>subtype MAP_MARKERS</strong></h4><br />"
               - settings:
@@ -390,7 +382,7 @@ pages:
   - name: Pie Chart
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: PIECHART
@@ -404,7 +396,7 @@ pages:
                         functions:
                           - source: Product
                           - source: Quantity
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: PIECHART
@@ -422,7 +414,7 @@ pages:
   - name: Bubble Chart
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - html: "<h4><strong>Bubble Chart</strong></h4><br />"
               - settings:
@@ -440,7 +432,7 @@ pages:
   - name: Area Chart
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: AREACHART
@@ -455,7 +447,7 @@ pages:
                           - source: Product
                           - source: Quantity
                           - source: Quantity2
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: AREACHART
@@ -471,6 +463,18 @@ pages:
                           - source: Product
                           - source: Quantity
                           - source: Quantity2
+  - name: Timeseries
+    components:
+      - settings:
+          type: TIMESERIES
+          general:
+            title: Sample Timeseries
+          chart:
+            zoom: true
+          external:
+            width: 100%
+          lookup:
+            uuid: timeseries
   - name: Table
     components:
       - html: "<h4><strong>Table (default type)</strong></h4>"
@@ -485,7 +489,7 @@ pages:
   - name: Bar Chart
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: BARCHART
@@ -500,7 +504,7 @@ pages:
                           - source: Product
                           - source: Quantity
                           - source: Quantity2
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: BARCHART
@@ -520,7 +524,7 @@ pages:
                           - source: Quantity
                           - source: Quantity2
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: BARCHART
@@ -536,7 +540,7 @@ pages:
                           - source: Product
                           - source: Quantity
                           - source: Quantity2
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: BARCHART
@@ -558,7 +562,7 @@ pages:
   - name: Line Chart
     rows:
       - columns:
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: LINECHART
@@ -573,7 +577,7 @@ pages:
                           - source: Product
                           - source: Quantity
                           - source: Quantity2
-          - span: "6"
+          - span: 6
             components:
               - settings:
                   type: LINECHART
@@ -595,10 +599,10 @@ pages:
     components:
       - properties:
           margin-bottom: 20px
-        html: >-
-          Data can be displayed using <i>Displayers</i>. 
-          The usual charts types are supported and Dashbuilder internally use <a href="https://echarts.apache.org/en/index.html">ECharts library</a> to render them. <br />
-          Displayers configuration is described in the <a href="https://www.dashbuilder.org/docs/#chap-dashbuilder-yaml-guides">YML guide</a>
+        markdown: >-
+          Data can be displayed using *Displayers*.
+          The usual charts types are supported and Dashbuilder internally use [ECharts library](https://echarts.apache.org/en/index.html) to render them. <br />
+          Displayers configuration is described in the [YML guide](https://www.dashbuilder.org/docs/#chap-dashbuilder-yaml-guides)
       - type: TABS
         properties:
           width: 100%
@@ -634,19 +638,19 @@ pages:
           - properties:
               border: solid 1px
               text-align: center
-            span: "3"
+            span: 3
             components:
               - html: ROW2 CL1 SPAN 3
           - properties:
               border: solid 1px
               text-align: center
-            span: "3"
+            span: 3
             components:
               - html: ROW2 CL2 SPAN 3
           - properties:
               border: solid 1px
               text-align: center
-            span: "6"
+            span: 6
             components:
               - html: ROW2 CL3 SPAN 6
       - columns:
@@ -764,6 +768,17 @@ pages:
           border: dashed 1px
           padding: 20px
           margin: 10px
+  - name: Panel
+    properties:
+      margin: 10px
+    components:
+      - html: >-
+          <p>You can Embed other pages any where you want with the <strong>panel</strong> component. This works just like *screen*, but the content will live in a titled panel, which can be collapsed. Try it below:
+          </p>
+      - panel: Layout
+        properties:
+          margin-right: 10px
+          border: 1px solid lightgray
   - name: Settings and Global
     properties:
       margin: 10px
@@ -806,6 +821,36 @@ pages:
                         lookup:
                             uuid: test</pre>
           </li>
+          <li><strong>dataset</strong>: it is possible to declare a global dataset configuration. The declared datasets will reuse the global dataset fields, but they can be overridden locally.
+                    In the example below all datasets will have the same content and columns, but the first dataset overrides the content only:
+            <pre>
+              global:
+                  dataset:
+                      content: >-
+                          [
+                              ["Global", "Content"]
+                          ]
+                      columns:
+                          - id: c1
+                          - id: c2
+              datasets:
+                  # This dataset copies all the configuration from the global dataset
+                  - uuid: d1
+                  # this dataset overrides the content
+                  - uuid: d2
+                    content: >-
+                        [
+                            ["Local", "Content"]
+                        ]
+              pages:
+                  - components:
+                        - settings:
+                              lookup:
+                                  uuid: d1
+                        - settings:
+                              lookup:
+                                  uuid: d2
+          </li>
           </ul>
 
 navTree:
@@ -832,12 +877,12 @@ navTree:
         - page: Map
         - page: Metric
         - page: Selectors
+        - page: Timeseries
         - page: Table
     - type: GROUP
       id: Components
       children:
-        - page: ECharts
-        - page: Timeseries
+        - page: ECharts        
         - page: SVG Heatmap
         - page: Rich Table
         - page: Geo Map
@@ -846,6 +891,7 @@ navTree:
       id: Navigation
       children:
         - page: Screen
+        - page: Panel
         - page: Tiles
         - page: Carousel
         - page: Menu
