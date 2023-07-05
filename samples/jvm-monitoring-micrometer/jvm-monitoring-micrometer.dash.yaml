@@ -39,7 +39,7 @@ pages:
       - columns:
           - span: 6
             components:
-              - settings:
+              - displayer:
                   component: timeseries
                   timeseries:
                     title:
@@ -65,7 +65,7 @@ pages:
                             function: SUM
           - span: 6
             components:
-              - settings:
+              - displayer:
                   component: timeseries
                   timeseries:
                     title:
@@ -91,7 +91,7 @@ pages:
         columns:
           - span: 6
             components:
-              - settings:
+              - displayer:
                   component: timeseries
                   timeseries:
                     title:
@@ -113,7 +113,7 @@ pages:
                             function: SUM
           - span: 6
             components:
-              - settings:
+              - displayer:
                   component: timeseries
                   timeseries:
                     title:

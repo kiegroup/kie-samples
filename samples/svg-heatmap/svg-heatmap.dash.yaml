@@ -31,7 +31,7 @@ datasets:
         type: NUMBER
 pages:
   - components:
-      - settings:
+      - displayer:
           component: svg-heatmap
           external:
             width: 100%

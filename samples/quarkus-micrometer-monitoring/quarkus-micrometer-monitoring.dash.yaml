@@ -52,7 +52,7 @@ pages:
       - columns:
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: "CPU Usage"
@@ -78,7 +78,7 @@ pages:
                             column: CPU
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: Open Files
@@ -99,7 +99,7 @@ pages:
                             column: Total
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     visible: true
@@ -126,7 +126,7 @@ pages:
                             column: UPTIME
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: "Peak Threads"
@@ -148,7 +148,7 @@ pages:
         columns:
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: BARCHART
                   extraConfiguration: >-
                     {
@@ -183,7 +183,7 @@ pages:
                             column: Total
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: BARCHART
                   extraConfiguration: >-
                     {
@@ -221,7 +221,7 @@ pages:
           margin-top: 20px
         columns:
           - components:
-              - settings:
+              - displayer:
                   type: BARCHART
                   extraConfiguration: >-
                     {

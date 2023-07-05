@@ -38,7 +38,7 @@ pages:
       - columns:
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: Users
@@ -59,7 +59,7 @@ pages:
                           - source: value
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: Running Servers
@@ -81,7 +81,7 @@ pages:
                           - source: value
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: Memory (mb)
@@ -103,7 +103,7 @@ pages:
                           - source: value
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: Startup (seconds)
@@ -130,7 +130,7 @@ pages:
       - columns:
           - span: 4
             components:
-              - settings:
+              - displayer:
                   type: barchart
                   general:
                     title: Server Spawn
@@ -154,7 +154,7 @@ pages:
                           - source: Value
           - span: 4
             components:
-              - settings:
+              - displayer:
                   type: barchart
                   general:
                     title: Server Stop
@@ -176,7 +176,7 @@ pages:
                           - source: Value
           - span: 4
             components:
-              - settings:
+              - displayer:
                   type: barchart
                   general:
                     title: Proxy Add
@@ -195,7 +195,7 @@ pages:
                           - source: Value
       - columns:
           - components:
-              - settings:
+              - displayer:
                   type: barchart
                   extraConfiguration: >-
                     {
