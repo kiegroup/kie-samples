@@ -28,7 +28,7 @@ pages:
         properties:
           font-size: xx-large
           margin-bottom: 30px
-      - settings:
+      - displayer:
           type: BARCHART
           lookup:
             uuid: products
@@ -41,6 +41,6 @@ pages:
                     function: SUM
                   - source: Quantity2
                     function: SUM
-      - settings:
+      - displayer:
           lookup:
             uuid: products

@@ -100,7 +100,7 @@ pages:
             }
   - name: SVG Heatmap
     components:
-      - settings:
+      - displayer:
           component: svg-heatmap
           external:
             width: 100%
@@ -118,7 +118,7 @@ pages:
             uuid: svg-data
   - name: ECharts
     components:
-      - settings:
+      - displayer:
           component: echarts
           external:
             width: 100%
@@ -170,7 +170,7 @@ pages:
                   - source: quantity2
   - name: Rich Table
     components:
-      - settings:
+      - displayer:
           component: table
           external:
             width: 100%
@@ -178,7 +178,7 @@ pages:
             uuid: products
   - name: Geo Map
     components:
-      - settings:
+      - displayer:
           component: map
           chart:
             height: 400
@@ -245,7 +245,7 @@ pages:
 
       - html: >-
           <strong> subtype DROPDOWN (default) </strong>
-      - settings:
+      - displayer:
           type: SELECTOR
           filter:
             enabled: true
@@ -261,7 +261,7 @@ pages:
                   - source: Section
       - html: >-
           <br /><strong>subtype SELECTOR_LABELS (used only with LABEL column types)</strong>
-      - settings:
+      - displayer:
           type: SELECTOR
           subtype: SELECTOR_LABELS
           filter:
@@ -278,7 +278,7 @@ pages:
                   - source: Section
       - html: >-
           <br /><strong> subtype SELECTOR_SLIDER (can't be used with LABEL columns)</strong>
-      - settings:
+      - displayer:
           type: SELECTOR
           subtype: SELECTOR_SLIDER
           filter:
@@ -291,7 +291,7 @@ pages:
             group:
               - functions:
                   - source: Quantity
-      - settings:
+      - displayer:
           type: BARCHART
           filter:
             enabled: true
@@ -312,7 +312,7 @@ pages:
       - html: >-
           Metric components render an HTML template based on data. Users can customize the HTML and Javascript based on data.
       - html: "<h4><strong>Default Metric</strong></h4><br />"
-      - settings:
+      - displayer:
           type: METRIC
           chart:
             height: "100"
@@ -328,7 +328,7 @@ pages:
       - html: >-
           <hr /> 
           The following metric uses custom HTML and Javascript template:<br/>
-      - settings:
+      - displayer:
           type: METRIC
           html:
             html: >-
@@ -355,7 +355,7 @@ pages:
           - span: 6
             components:
               - html: "<h4><strong>subtype MAP_REGIONS (default)</strong></h4><br />"
-              - settings:
+              - displayer:
                   type: MAP
                   lookup:
                     uuid: countries
@@ -368,7 +368,7 @@ pages:
           - span: 6
             components:
               - html: "<h4><strong>subtype MAP_MARKERS</strong></h4><br />"
-              - settings:
+              - displayer:
                   type: MAP
                   subtype: MAP_MARKERS
                   lookup:
@@ -384,7 +384,7 @@ pages:
       - columns:
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: PIECHART
                   general:
                     title: subtype pie (default)
@@ -398,7 +398,7 @@ pages:
                           - source: Quantity
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: PIECHART
                   subtype: DONUT
                   general:
@@ -417,7 +417,7 @@ pages:
           - span: 6
             components:
               - html: "<h4><strong>Bubble Chart</strong></h4><br />"
-              - settings:
+              - displayer:
                   type: BUBBLECHART
                   lookup:
                     uuid: products
@@ -434,7 +434,7 @@ pages:
       - columns:
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: AREACHART
                   general:
                     title: subtype area (default)
@@ -449,7 +449,7 @@ pages:
                           - source: Quantity2
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: AREACHART
                   subtype: AREA_STACKED
                   general:
@@ -465,7 +465,7 @@ pages:
                           - source: Quantity2
   - name: Timeseries
     components:
-      - settings:
+      - displayer:
           type: TIMESERIES
           general:
             title: Sample Timeseries
@@ -478,7 +478,7 @@ pages:
   - name: Table
     components:
       - html: "<h4><strong>Table (default type)</strong></h4>"
-      - settings:
+      - displayer:
           table:
             pageSize: 10
           chart:
@@ -491,7 +491,7 @@ pages:
       - columns:
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: BARCHART
                   general:
                     title: subtype COLUMN (default)
@@ -506,7 +506,7 @@ pages:
                           - source: Quantity2
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: BARCHART
                   subtype: BAR
                   general:
@@ -526,7 +526,7 @@ pages:
       - columns:
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: BARCHART
                   subtype: COLUMN_STACKED
                   general:
@@ -542,7 +542,7 @@ pages:
                           - source: Quantity2
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: BARCHART
                   subtype: BAR_STACKED
                   general:
@@ -564,7 +564,7 @@ pages:
       - columns:
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: LINECHART
                   general:
                     title: subtype line (default)
@@ -579,7 +579,7 @@ pages:
                           - source: Quantity2
           - span: 6
             components:
-              - settings:
+              - displayer:
                   type: LINECHART
                   subtype: SMOOTH
                   general:
@@ -812,11 +812,11 @@ pages:
                                 [["a", 1]]
             pages:
                 - components:
-                    - settings:
+                    - displayer:
                         type: BARCHART
                         lookup:
                             uuid: test
-                    - settings:
+                    - displayer:
                         type: BARCHART
                         lookup:
                             uuid: test</pre>
@@ -844,10 +844,10 @@ pages:
                         ]
               pages:
                   - components:
-                        - settings:
+                        - displayer:
                               lookup:
                                   uuid: d1
-                        - settings:
+                        - displayer:
                               lookup:
                                   uuid: d2
           </li>

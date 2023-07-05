@@ -9,7 +9,7 @@ datasets:
 pages:
   - components:
       - html: "<h1>Person by Age</h1>"
-      - settings:
+      - displayer:
           type: BARCHART
           lookup:
             uuid: hello

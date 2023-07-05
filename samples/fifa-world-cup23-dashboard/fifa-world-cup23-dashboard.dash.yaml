@@ -115,7 +115,7 @@ pages:
             columns:
                 - span: 3
                   components:
-                      - settings:
+                      - displayer:
                             type: METRIC
                             general:
                                 title: Total Goals
@@ -130,7 +130,7 @@ pages:
                                             function: SUM
                 - span: 3
                   components:
-                      - settings:
+                      - displayer:
                             type: METRIC
                             general:
                                 title: Average Goals by Match
@@ -142,7 +142,7 @@ pages:
                                             function: AVERAGE
                 - span: 3
                   components:
-                      - settings:
+                      - displayer:
                             type: METRIC
                             general:
                                 title: Average Temperature
@@ -154,7 +154,7 @@ pages:
                                             function: AVERAGE
                 - span: 3
                   components:
-                      - settings:
+                      - displayer:
                             type: METRIC
                             general:
                                 title: Average Attendance
@@ -167,7 +167,7 @@ pages:
           - columns:
                 - span: 6
                   components:
-                      - settings:
+                      - displayer:
                             type: linechart
 
                             general:
@@ -187,7 +187,7 @@ pages:
                                             function: ${GoalsFunction}
                 - span: 6
                   components:
-                      - settings:
+                      - displayer:
                             type: barchart
                             general:
                                 title: Goals by Stadium
@@ -214,7 +214,7 @@ pages:
             columns:
                 - span: 6
                   components:
-                      - settings:
+                      - displayer:
                             type: bubblechart
                             general:
                                 title: Goals by Weather
@@ -240,7 +240,7 @@ pages:
                                             column: TOTAL MATCHES
                 - span: 6
                   components:
-                      - settings:
+                      - displayer:
                             type: bubblechart
                             general:
                                 title: Goals by Attendance
@@ -274,7 +274,7 @@ pages:
 
                                 <strong>All Matches</strong>
                             </p>
-                      - settings:
+                      - displayer:
                             component: table
                             external:
                                 width: 100%

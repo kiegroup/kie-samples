@@ -89,7 +89,7 @@ pages:
       - columns:
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: "Managed Models"
@@ -105,7 +105,7 @@ pages:
                           - source: value
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: "Models with Failure"
@@ -121,7 +121,7 @@ pages:
                           - source: value
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: "Load Model (ms)"
@@ -137,7 +137,7 @@ pages:
                           - source: value
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: "Models Size (kb)"
@@ -163,7 +163,7 @@ pages:
           - components:
               - html: >-
                   <p style="font-size: 25px; font-weight: 600"> JVM Memory </p>
-              - settings:
+              - displayer:
                   type: barchart
                   chart:
                     resizable: true

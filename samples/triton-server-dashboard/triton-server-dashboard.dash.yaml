@@ -30,7 +30,7 @@ pages:
       - columns:
           - span: 3
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: Running Models
@@ -54,7 +54,7 @@ pages:
                             function: COUNT
           - span: "3"
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: Inference Count
@@ -78,7 +78,7 @@ pages:
                             function: SUM
           - span: "3"
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: Inference Requests Success
@@ -103,7 +103,7 @@ pages:
                             function: SUM
           - span: "3"
             components:
-              - settings:
+              - displayer:
                   type: METRIC
                   general:
                     title: Inference Requests Failure
@@ -131,7 +131,7 @@ pages:
               margin-top: 5px
             components:
               - html: <hr /><strong>Filter by Model</strong>
-              - settings:
+              - displayer:
                   type: SELECTOR
                   filter:
                     enabled: true
@@ -160,7 +160,7 @@ pages:
               - html: <h3>Inference Count</h3>
                 properties:
                   text-align: center
-              - settings:
+              - displayer:
                   component: victory-charts
                   filter:
                     enabled: true
@@ -207,7 +207,7 @@ pages:
               - html: <h3>Sucessful Inferences</h3>
                 properties:
                   text-align: center
-              - settings:
+              - displayer:
                   component: victory-charts
                   filter:
                     enabled: true
@@ -253,7 +253,7 @@ pages:
               - html: <h3>Failure Inferences</h3>
                 properties:
                   text-align: center
-              - settings:
+              - displayer:
                   component: victory-charts
                   filter:
                     enabled: true
@@ -302,7 +302,7 @@ pages:
               - html: <h3>Request Total Duration</h3>
                 properties:
                   text-align: center
-              - settings:
+              - displayer:
                   component: victory-charts
                   filter:
                     enabled: true
@@ -343,7 +343,7 @@ pages:
               - html: <h3>Inference Total Duration</h3>
                 properties:
                   text-align: center
-              - settings:
+              - displayer:
                   component: victory-charts
                   filter:
                     enabled: true
@@ -388,7 +388,7 @@ pages:
               - html: <h3>Inference Queue Wait</h3>
                 properties:
                   text-align: center
-              - settings:
+              - displayer:
                   component: victory-charts
                   filter:
                     enabled: true
