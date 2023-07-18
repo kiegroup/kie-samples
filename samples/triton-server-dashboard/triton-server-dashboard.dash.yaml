@@ -35,7 +35,7 @@ pages:
                   general:
                     title: Running Models
                   chart:
-                    width: "150"
+                    width: 150
                   html:
                     javascript: document.getElementById(${this}.id + "Icon").className = "fa fa-cubes";
                   columns:
@@ -52,7 +52,7 @@ pages:
                       - functions:
                           - source: labels
                             function: COUNT
-          - span: "3"
+          - span: 3
             components:
               - displayer:
                   type: METRIC
@@ -76,7 +76,7 @@ pages:
                       - functions:
                           - source: value
                             function: SUM
-          - span: "3"
+          - span: 3
             components:
               - displayer:
                   type: METRIC
@@ -84,7 +84,7 @@ pages:
                     title: Inference Requests Success
                     visible: true
                   chart:
-                    width: "150"
+                    width: 150
                   html:
                     javascript: document.getElementById(${this}.id + "Icon").className = "pficon-ok";
                   columns:
@@ -101,7 +101,7 @@ pages:
                       - functions:
                           - source: value
                             function: SUM
-          - span: "3"
+          - span: 3
             components:
               - displayer:
                   type: METRIC
@@ -155,7 +155,7 @@ pages:
       - properties:
           margin-top: 20px
         columns:
-          - span: "4"
+          - span: 4
             components:
               - html: <h3>Inference Count</h3>
                 properties:
@@ -202,7 +202,7 @@ pages:
                           - source: labels
                           - source: value
                             function: SUM
-          - span: "4"
+          - span: 4
             components:
               - html: <h3>Sucessful Inferences</h3>
                 properties:
@@ -248,7 +248,7 @@ pages:
                           - source: labels
                           - source: value
                             function: SUM
-          - span: "4"
+          - span: 4
             components:
               - html: <h3>Failure Inferences</h3>
                 properties:
@@ -297,7 +297,7 @@ pages:
       - properties:
           margin-top: 20px
         columns:
-          - span: "4"
+          - span: 4
             components:
               - html: <h3>Request Total Duration</h3>
                 properties:
@@ -338,7 +338,7 @@ pages:
                           - source: labels
                           - source: value
                             column: Duration
-          - span: "4"
+          - span: 4
             components:
               - html: <h3>Inference Total Duration</h3>
                 properties:
@@ -383,7 +383,7 @@ pages:
                           - source: labels
                           - source: value
                             column: Duration
-          - span: "4"
+          - span: 4
             components:
               - html: <h3>Inference Queue Wait</h3>
                 properties:
