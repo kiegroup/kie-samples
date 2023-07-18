@@ -168,7 +168,7 @@ pages:
                 - span: 6
                   components:
                       - displayer:
-                            type: linechart
+                            type: LINECHART
 
                             general:
                                 title: Goals by Day
@@ -188,7 +188,7 @@ pages:
                 - span: 6
                   components:
                       - displayer:
-                            type: barchart
+                            type: BARCHART
                             general:
                                 title: Goals by Stadium
                             axis:
@@ -215,7 +215,7 @@ pages:
                 - span: 6
                   components:
                       - displayer:
-                            type: bubblechart
+                            type: BUBBLECHART
                             general:
                                 title: Goals by Weather
                                 subtitle: Bubble shows total matches
@@ -241,7 +241,7 @@ pages:
                 - span: 6
                   components:
                       - displayer:
-                            type: bubblechart
+                            type: BUBBLECHART
                             general:
                                 title: Goals by Attendance
                                 subtitle: Bubble shows total goals

@@ -108,7 +108,7 @@ pages:
                   general:
                     title: Startup (seconds)
                   chart:
-                    width: "150"
+                    width: 150
                   html:
                     javascript: document.getElementById(${this}.id + "Icon").className = "fa fa-clock-o";
                   columns:
@@ -131,7 +131,7 @@ pages:
           - span: 4
             components:
               - displayer:
-                  type: barchart
+                  type: BARCHART
                   general:
                     title: Server Spawn
                   chart:
@@ -155,7 +155,7 @@ pages:
           - span: 4
             components:
               - displayer:
-                  type: barchart
+                  type: BARCHART
                   general:
                     title: Server Stop
                   filter:
@@ -177,7 +177,7 @@ pages:
           - span: 4
             components:
               - displayer:
-                  type: barchart
+                  type: BARCHART
                   general:
                     title: Proxy Add
                   lookup:
@@ -196,7 +196,7 @@ pages:
       - columns:
           - components:
               - displayer:
-                  type: barchart
+                  type: BARCHART
                   extraConfiguration: >-
                     {
                       "xAxis": {  

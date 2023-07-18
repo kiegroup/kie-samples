@@ -164,7 +164,7 @@ pages:
               - html: >-
                   <p style="font-size: 25px; font-weight: 600"> JVM Memory </p>
               - displayer:
-                  type: barchart
+                  type: BARCHART
                   chart:
                     resizable: true
                     height: 400
