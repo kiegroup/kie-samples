@@ -244,7 +244,7 @@ pages:
           </p>
 
       - html: >-
-          <strong> subtype DROPDOWN (default) </strong>
+          <strong> Default Selector </strong>
       - displayer:
           type: SELECTOR
           filter:
@@ -265,10 +265,7 @@ pages:
           type: SELECTOR
           subtype: SELECTOR_LABELS
           filter:
-            enabled: true
             notification: true
-            listening: false
-            selfapply: false
           lookup:
             uuid: products
             group:
@@ -276,28 +273,10 @@ pages:
                   source: Section
                 functions:
                   - source: Section
-      - html: >-
-          <br /><strong> subtype SELECTOR_SLIDER (can't be used with LABEL columns)</strong>
-      - displayer:
-          type: SELECTOR
-          subtype: SELECTOR_SLIDER
-          filter:
-            enabled: true
-            notification: true
-            listening: false
-            selfapply: false
-          lookup:
-            uuid: products
-            group:
-              - functions:
-                  - source: Quantity
       - displayer:
           type: BARCHART
           filter:
-            enabled: true
-            notification: true
-            listening: false
-            selfapply: false
+            listening: true
           lookup:
             uuid: products
             group:
@@ -316,6 +295,7 @@ pages:
           type: METRIC
           chart:
             height: 100
+            width: 150
           general:
             visible: true
             title: Total Products
@@ -325,10 +305,13 @@ pages:
               - functions:
                   - source: Quantity
                     function: SUM
-      - html: >-
-          <hr /> 
-          The following metric uses custom HTML and Javascript template:<br/>
-      - displayer:
+      - html: "The following metric uses custom HTML and Javascript template:"
+        properties:
+            margin-top: 20px
+            margin-bottom: 20px
+      - properties:
+            border: solid 1px
+        displayer:
           type: METRIC
           html:
             html: >-
@@ -731,7 +714,7 @@ pages:
                     font-size: xxx-large</pre>
           </p>
           <p>
-            Markdown is another markup language supported by Dashbuilder. YOu just have to use the <i>markdown</i> component and it will work:
+            Markdown is another markup language supported by Dashbuilder. You just have to use the <i>markdown</i> component and it will work:
           <pre>pages:
            - components:
                 - markdown: >-
@@ -874,7 +857,8 @@ navTree:
         - page: Pie Chart
         - page: Bubble Chart
         - page: Meter
-        - page: Map
+        # Removed because there's no displayer
+        #- page: Map
         - page: Metric
         - page: Selectors
         - page: Timeseries
@@ -893,7 +877,8 @@ navTree:
         - page: Screen
         - page: Panel
         - page: Tiles
-        - page: Carousel
+        # Removed Because it will not be supported in PF5
+        #- page: Carousel
         - page: Menu
         - page: Tree
 
